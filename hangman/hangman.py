@@ -24,3 +24,17 @@ def main():
     display = '_' * length
     already_guessed = []
     play_game = ""
+
+
+# A loop to re-execute the game when the first round ends:
+
+def play_loop():
+    global play_game
+    play_game = input("Do You want to play again? y = yes, n = no \n")
+    while play_game not in ["y","n", "N", "Y"]:
+        play_game = input("Do You want to play again? y = yes, n = no \n")
+    if play_game == "y":
+        main()
+    elif play_game == "n":
+        print("Thanks For Playing! We expect you back again!")
+        exit()
