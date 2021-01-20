@@ -19,4 +19,8 @@ def main():
     global play_game
     words_to_guess = ["january","java","image","javascript","promise","kids","lungs","doll","rhyme","damage","plants", "python", "programming", "data", "science", "economics"]
     word = random.choice(words_to_guess)
-    length = len()
+    length = len(word)
+    count = 0
+    display = '_' * length
+    already_guessed = []
+    play_game = ""
