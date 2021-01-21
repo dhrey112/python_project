@@ -133,12 +133,12 @@ def hangman():
             play_loop()
 
 
-if word == '_' * length:
-    print("Congrats! You have guessed the word correctly!")
-    play_loop()
+    if word == '_' * length:
+        print("Congrats! You have guessed the word correctly!")
+        play_loop()
 
-elif count != limit:
-    hangman()
+    elif count != limit:
+        hangman()
 
 main()
 
