@@ -5,7 +5,7 @@ print("\nWelcome to Hangman game\n")
 name = input("Enter your name: ")
 print("Hello " + name + "! Best of Luck!")
 time.sleep(2)
-print("The game is about to start!\n Let's play Hangman!")
+print("The game is about to start!\n\nThe game focus on computer sciences glossary\n\nLet's play Hangman!")
 time.sleep(3)
 
 
@@ -18,8 +18,9 @@ def main():
     global already_guessed
     global length
     global play_game
-    words_to_guess = ["january", "java", "image", "javascript", "promise", "kids", "lungs", "doll", "rhyme", "damage",
-                      "plants", "python", "programming", "data", "science", "economics"]
+    words_to_guess = ["assertion", "java", "array", "javascript", "application", "algorithm", "binary", "bandwidth", "rhyme", "bug",
+                      "compiler", "python", "programming", "data", "cloud", "cipher", "network", "concurreny", "threading", "boolean", "encryption",
+                      "ide", "variable", "integer", "float", "string", "dictionary"]
     word = random.choice(words_to_guess)
     length = len(word)
     count = 0
@@ -37,9 +38,10 @@ def play_loop():
         play_game = input("Do You want to play again? y = yes, n = no \n")
     if play_game == "y":
         main()
+        hangman()
     elif play_game == "n":
         print("Thanks For Playing! We expect you back again!")
-        exit()
+    exit()
 
 
 # Initializing all the conditions required for the game:
@@ -59,7 +61,8 @@ def hangman():
     elif guess in word:
         already_guessed.extend([guess])
         index = word.find(guess)
-        word = display[:index] + guess + display[index + 1:]
+        word = word[:index] + "_" + word[index + 1:]
+        display = display[:index] + guess + display[index + 1:]
         print(display + "\n")
 
     elif guess in already_guessed:
