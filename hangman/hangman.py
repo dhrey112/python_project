@@ -38,3 +38,16 @@ def play_loop():
     elif play_game == "n":
         print("Thanks For Playing! We expect you back again!")
         exit()
+
+# Initializing all the conditions required for the game:
+
+def hangman():
+    global counter
+    global display
+    global word
+    global already_guessed
+    global play_game
+    limit = 5
+    guess = input("This is the Hangman Word: " + display + " Enter your guess: \n")
+    guess = guess.strip()
+    if len(guess.strip()) == 0 or len
