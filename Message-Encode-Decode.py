@@ -21,9 +21,17 @@ Label(root, text='ENCODE DECODE', font='arial 20 bold').pack()
 Label(root, text='Dhrey', font='arial 10 bold').pack(side=BOTTOM)
 
 # Define variables
-text = StringVar()
+message = StringVar()
 private_key = StringVar()
 mode = StringVar()
 result = StringVar()
 
+# define function to encode
+def Encode(key, message):
+    enc=[]
+    
+    for i in range(len(message)):
+        key_c = key[i % len(key)]
+        enc.append(chr((ord(message[i]) + ord(key_c)) % 256))
+    return base64.urlsafe_b64encode("".join(enc).encode()).decode()
 root.mainloop()
