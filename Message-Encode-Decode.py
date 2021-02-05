@@ -34,4 +34,9 @@ def Encode(key, message):
         key_c = key[i % len(key)]
         enc.append(chr((ord(message[i]) + ord(key_c)) % 256))
     return base64.urlsafe_b64encode("".join(enc).encode()).decode()
+
+# define function to deode
+
+
+
 root.mainloop()
