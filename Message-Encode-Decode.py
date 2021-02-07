@@ -79,5 +79,8 @@ Entry(root, font='arial 10', textvariable=text, bg='ghost white').place(x=200, y
 Label(root, font='arial 12 bold', text='KEY').place(x=60, y=90)
 Entry(root, font='arial 10', textvariable=private_key, bg='ghost white').place(x=200, y=90)
 
+Label(root, font='arial 12 bold', text='MODE(e-encode, d-decode)').place(x=60, y=120)
+Entry(root, font='arial 10', textvariable=mode, bg='ghost white').place(x=290, y=120)
+Entry(root, font='arial 10 bold', textvariable=result, bg='ghost white').place(x=290, y=150)
 
 root.mainloop()
