@@ -77,7 +77,7 @@ Label(root, font='arial 12 bold', text='MESSAGE').place(x=60, y=60)
 Entry(root, font='arial 10', textvariable=text, bg='ghost white').place(x=200, y=60)
 
 Label(root, font='arial 12 bold', text='KEY').place(x=60, y=90)
-Entry(root, font='arial 10', textvariable=private_key, bg='ghost white').place(x=290, y=90)
+Entry(root, font='arial 10', textvariable=private_key, bg='ghost white').place(x=200, y=90)
 
 
 root.mainloop()
