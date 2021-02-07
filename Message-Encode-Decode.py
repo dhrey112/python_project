@@ -12,7 +12,7 @@ import base64  # function to encode the binary data to ASCII characters
 
 root = Tk()
 
-root.geometry('400x400')
+root.geometry('600x400')
 root.resizable(0, 0)  # won't be able to minimize
 root.title("Message Encode and Decode")
 #
@@ -74,6 +74,10 @@ def reset():
 
 # Labels and Button
 Label(root, font='arial 12 bold', text='MESSAGE').place(x=60, y=60)
-Entry(root, font='arial 10', textvariable=text, bg='ghost white').place(x=290, y=60)
+Entry(root, font='arial 10', textvariable=text, bg='ghost white').place(x=200, y=60)
+
+Label(root, font='arial 12 bold', text='KEY').place(x=60, y=90)
+Entry(root, font='arial 10', textvariable=private_key, bg='ghost white').place(x=290, y=90)
+
 
 root.mainloop()
