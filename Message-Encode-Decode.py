@@ -83,4 +83,9 @@ Label(root, font='arial 12 bold', text='MODE(e-encode, d-decode)').place(x=60, y
 Entry(root, font='arial 10', textvariable=mode, bg='ghost white').place(x=290, y=120)
 Entry(root, font='arial 10 bold', textvariable=result, bg='ghost white').place(x=290, y=150)
 
+Button(root, font='arial 10 bold', text='RESULT', padx=2, bg='LightGray', command=mode).place(x=60, y=150)
+Button(root, font='arial 10 bold', text='RESET', width=6, command=reset, bg='LimeGreen', padx=2).place(x=80, y=190)
+Button(root, font='arial 10 bold', text='EXIT', width=6, command=close_window, bg='OrangeRed', padx=2, pady=2).\
+    place(x=180, y=190)
+
 root.mainloop()
