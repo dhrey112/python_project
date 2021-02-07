@@ -21,7 +21,7 @@ Label(root, text='ENCODE DECODE', font='arial 20 bold').pack()
 Label(root, text='Dhrey', font='arial 10 bold').pack(side=BOTTOM)
 
 # Define variables
-message = StringVar()
+text = StringVar()
 private_key = StringVar()
 mode = StringVar()
 result = StringVar()
@@ -48,20 +48,32 @@ def decode(key, message):
 
     return "".join(dec)
 
+
 # function to set mode
 def mode():
     if mode.get() == 'e':
-        result.set(encode(private_key.Text.get()))
+        result.set(encode(private_key.text.get()))
     elif mode.get() == 'd':
-        result.set(decode(private_key.Text.get()))
+        result.set(decode(private_key.text.get()))
     else:
         result.set('Invalid Mode')
 
 
 # function to exit window
-def exit():
+def close_window():
     root.destroy()
 
-#function to reset window
+
+# function to reset window, it will set all variable to empty string
+def reset():
+    text.set("")
+    private_key.set("")
+    mode.set("")
+    result.set("")
+
+
+# Labels and Button
+Label(root, font='arial 12 bold', text='MESSAGE').place(x=60, y=60)
+Entry(root, font='arial 10', textvariable=text, bg='ghost white').place(x=290, y=60)
 
 root.mainloop()
