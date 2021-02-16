@@ -19,4 +19,7 @@ Label(root,text ="Enter Text", font = 'arial 15 bold', bg ='white smoke').place(
 entry_field = Entry(root, textvariable = msg, width='50')
 entry_field.place(x=20, y=100)
 
+# Function to Convert Text to Speech in Python
+
+
 root.mainloop()
