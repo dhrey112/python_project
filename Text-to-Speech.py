@@ -1,5 +1,5 @@
 from tkinter import *
-#from gtts import gTTS
+from gtts import gTTS
 from playsound import playsound
 
 """Convert your Text into Voice with Python and Google APIs"""
@@ -20,6 +20,23 @@ entry_field = Entry(root, textvariable = msg, width='50')
 entry_field.place(x=20, y=100)
 
 # Function to Convert Text to Speech in Python
+def Text_to_speech():
+    message = entry_field.get()
+    speech = gTTS(text = message)
+    speech.save('sound.mp3')
+    playsound('sound.mp3')
+    speech.close('sound.mp3')
+    
+def exit():
+    root.destroy()
+    
+def reset():
+    msg.set("")
 
+# Defining Function for buttons
+
+Button(root, text = "PLAY", font = 'arial 15 bold' , command = Text_to_speech ,width = '4').place(x=25,y=140)
+Button(root, font = 'arial 15 bold',text = 'EXIT', width = '4' , command = Exit, bg = 'OrangeRed1').place(x=100 , y = 140)
+Button(root, font = 'arial 15 bold',text = 'RESET', width = '6' , command = Reset).place(x=175 , y = 140)
 
 root.mainloop()
