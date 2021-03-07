@@ -2,6 +2,7 @@ import tkinter
 from PIL import Image, ImageTk
 import random
 
+
 window = tkinter.Tk()
 window.geometry('300x300')
 window.title('Roll the Dice')
@@ -14,8 +15,8 @@ heading_label = tkinter.Label(window, text='Hello!', fg='light green', bg='dark 
 heading_label.pack()
 
 # image
-dice = ['die1.png', 'die2.png', 'die3.png',
-        'die4.png', 'die5.png', 'die6.png']
+dice = ['image/die1.png', 'image/die2.png', 'image/die3.png',
+        'image/die4.png', 'image/die5.png', 'image/die6.png']
 
 # simulating the dice with random numbers between
 # 0 to 6 and generating image
