@@ -4,7 +4,7 @@ import random
 
 
 window = tkinter.Tk()
-window.geometry('300x300')
+window.geometry('350x400')
 window.title('Roll the Dice')
 
 blank_line = tkinter.Label(window, text="")
