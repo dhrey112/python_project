@@ -40,6 +40,7 @@ Button(window, text="(", command=lambda: get_operation("(")).grid(row=4, column=
 Button(window, text="exp", command=lambda: get_operation("**")).grid(row=5, column=4, sticky=N + S + E + W)
 
 Button(window, text="<-", command=lambda: undo()).grid(row=2, column=5, sticky=N + S + E + W)
+
 Button(window, text="x!", command=lambda: fact()).grid(row=3, column=5, sticky=N + S + E + W)
 Button(window, text=")", command=lambda: get_operation(")")).grid(row=4, column=5, sticky=N + S + E + W)
 Button(window, text="^2", command=lambda: get_operation("**2")).grid(row=5, column=5, sticky=N + S + E + W)
@@ -91,6 +92,16 @@ def calculate():
     except Exception:
         clear_all()
         display.insert(0, "Error")
+        
 
+def fact():
+    entire_string = display.get()
+    try:
+        result = factorial(int(entire_string))
+        clear_all()
+        display.insert(0, result)
+    except Exception:
+        clear_all()
+        display.insert(0, "Error")
 
 window.mainloop()
