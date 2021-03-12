@@ -7,7 +7,7 @@ window.title('Calculator')
 
 # adding the input field
 display = Entry(window)
-display.grid(row=1, columnspan=6, sticky=N + E + W + S)
+display.grid(row=1, columnspan=50, sticky=N + E + W + S)
 
 # Code to add buttons to the Calculator
 # adding figure button
@@ -40,10 +40,8 @@ Button(window, text="(", command=lambda: get_operation("(")).grid(row=4, column=
 Button(window, text="exp", command=lambda: get_operation("**")).grid(row=5, column=4, sticky=N + S + E + W)
 
 Button(window, text="<-", command=lambda: undo()).grid(row=2, column=5, sticky=N + S + E + W)
-
 Button(window, text="x!", command=lambda: fact()).grid(row=3, column=5, sticky=N + S + E + W)
 Button(window, text=")", command=lambda: get_operation(")")).grid(row=4, column=5, sticky=N + S + E + W)
-Button(window, text="^2", command=lambda: get_operation("**2")).grid(row=5, column=5, sticky=N + S + E + W)
 Button(window, text="^2", command=lambda: get_operation("**2")).grid(row=5, column=5, sticky=N + S + E + W)
 
 Button(window, text="=", command=lambda: calculate()).grid(columnspan=6, sticky=N + S + E + W)
@@ -92,7 +90,7 @@ def calculate():
     except Exception:
         clear_all()
         display.insert(0, "Error")
-        
+
 
 def fact():
     entire_string = display.get()
@@ -103,5 +101,6 @@ def fact():
     except Exception:
         clear_all()
         display.insert(0, "Error")
+
 
 window.mainloop()
