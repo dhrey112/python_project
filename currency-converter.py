@@ -23,3 +23,19 @@ def convert(self, from_currency, to_currency, amount):
     amount = round(amount * self.currencies[to_currency], 4)
     return amount
 
+# create the UI class
+class currency_converter_UI():
+    def __init__(self, converter):
+        tk.Tk.__init__(self)
+        self.title = 'Currency Converter'
+        self.currency_converter = converter
+
+# Let create the converter
+        self.geometry('500x200')
+
+        self.intro_label = Label(self, text='Welcome to Real Time Currency Convertor', fg = 'blue', relief = tk.RAISED, borderwidth=3)
+        self.intro_label.config(font = ('Courier', 15, 'bold'))
+        self.date_label = Label(self, text = f"1 Indian Rupee equals = {self.currency_converter.convert('INR','USD',1)} USD \n Date : {self.currency_converter.data['date']}", relief = tk.GROOVE, borderwidth = 5)
+        
+        self.intro_label.place(x = 10, y = 5)
+        self.date_label.place(x = 170, y=50)
