@@ -46,15 +46,20 @@ class CurrencyConverterUI(tk.Tk):
 
         # Entry Box
         valid = (self.register(self.restrictNumberOnly), '%d', '%p')
-        # restricNumberOnly function will restrict thes user to enter invavalid number in Amount field. We will define it later in code
+        # restricNumberOnly function will restrict the user to enter invavalid number in Amount field. We will define it later in code
         self.amount_field = Entry(self, bd = 3, relief = tk.RIDGE, justify = tk.CENTER, validate = 'key', validatecommand=valid)
         self.converted_amount_field_label = Label(self, text = "", fg = 'black', bg='red', relief = tk.RIDGE, justify=tk.CENTER, width = 17, borderwidth = 3)
 
         # dropdown
         self.from_currency_variable = StringVar(self)
-        self.from_currency_variable.set("NRN")
+        self.from_currency_variable.set("NGN") # default values
+        self.to_currency_variable = StringVar(self)
+        self.to_currency_variable.set("USD") # default value
 
-
+        font = ("Courier", 12, "bold")
+        self.option_add('*TCombobox*Listbox.font', font)
+        self.from_currency_dropdown = ttk.Combobox(self, textvariable=self.from_currency_variable, values=list(self.currency_converter.currencies.key()), font = font, state = 'readonly', width = 12, justify = tk.CENTER)
+        self.to_currency_dropdown = ttk.Combobox(self, textvariable=self.to_currency_variable,values=list(self.currency_converter.currencies.keys()), font = font, state = 'readonly', width = 12, justify = tk.CENTER)
 
     def RealTimeCurrencyConverter(self, action, string):
         regrex = re.compile(r"[0-9]*?(\.)?[0-9,]*$")
