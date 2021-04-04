@@ -61,14 +61,6 @@ class CurrencyConverterUI(tk.Tk):
         self.from_currency_dropdown = ttk.Combobox(self, textvariable=self.from_currency_variable, values=list(self.currency_converter.currencies.key()), font = font, state = 'readonly', width = 12, justify = tk.CENTER)
         self.to_currency_dropdown = ttk.Combobox(self, textvariable=self.to_currency_variable,values=list(self.currency_converter.currencies.keys()), font = font, state = 'readonly', width = 12, justify = tk.CENTER)
 
-        # placing
-        self.from_currency_dropdown.place(x = 30, y =120)
-        self.amount_field.place(x = 36, y = 150)
-        self.to_currency_dropdown.place(x = 346, y= 150)
-
-        #convert buttons
-        self.convert_button = Button(self, text = "Convert", fg = "black", command = self.perform)
-
     def RealTimeCurrencyConverter(self, action, string):
         regrex = re.compile(r"[0-9]*?(\.)?[0-9,]*$")
         result = regrex.match(string)
