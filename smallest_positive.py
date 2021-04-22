@@ -5,9 +5,8 @@ def smallest_positive(in_list):
     small_pos = None
     for num in in_list:
         if num > 0:
-            if small_pos == None or num < small_pos:
+            if small_pos is None or num < small_pos:
                 small_pos = num
-
 
     return small_pos
 

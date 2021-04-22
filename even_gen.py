@@ -20,8 +20,24 @@ def all_even():
         yield n
         n += 2
 
-
 my_gen = all_even()
 
 for i in range(100):
     print(next(my_gen))
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
