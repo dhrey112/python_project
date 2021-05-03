@@ -4,7 +4,5 @@ for x in range(4):
 
 number = [5, 2, 5, 2, 2]
 for x_count in number:
-    output = ""
-    for count in range(x_count):
-        output += 'x'
+    output = "".join('x' for _ in range(x_count))
     print(output)
