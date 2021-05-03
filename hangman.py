@@ -71,7 +71,7 @@ def hangman():
     else:
         count += 1
 
-        if count == 1:
+        if count in [1, 3]:
             time.sleep(1)
 
             print("   _____ \n"
@@ -96,20 +96,6 @@ def hangman():
                   "  |      \n"
                   "__|__\n")
             print("Wrong guess. " + str(limit - count) + " last guess remaining\n")
-
-        elif count == 3:
-            time.sleep(1)
-
-            print("   _____ \n"
-                  "  |     | \n"
-                  "  |     |\n"
-                  "  |     | \n"
-                  "  |      \n"
-                  "  |      \n"
-                  "  |      \n"
-                  "__|__\n")
-
-            print("Wrong guess. " + str(limit - count) + " guesses remaining\n")
 
         elif count == 4:
             time.sleep(1)

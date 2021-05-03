@@ -1,6 +1,5 @@
-numbers = [5, 6, 3, 8, 8, 9]
+numbers = [5, 6, 3, 8, 8, 9, 20]
 
-numbers.append(20)
 print(numbers)
 numbers.insert(0, 10)
 print(numbers)
