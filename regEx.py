@@ -14,10 +14,7 @@ text = pyperclip.paste()
 extracted_phone = phoneregex.findall(text)
 extracted_email = email.findall(text)
 
-all_phone_numbers = []
-
-for phone_number in extracted_phone:
-    all_phone_numbers.append(phone_number[0])
+all_phone_numbers = [phone_number[0] for phone_number in extracted_phone]
 
 print(all_phone_numbers)
 print(extracted_email)
