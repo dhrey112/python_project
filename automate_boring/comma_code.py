@@ -24,7 +24,7 @@ def comma_code_args(first, *rest):
 
     if head:
         final = f" and {final}"
-        # print(final)
+        #print(final)
     return ', '.join(*head, final)
 
 fruits = comma_code_args(fruits)
