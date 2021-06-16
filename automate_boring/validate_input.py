@@ -6,7 +6,7 @@ while True:
     print("Please enter a number for your age")
 
 while True:
-    print("Select a new password (letters and numbers only):" )
+    print("Select a new password (letters and numbers only):")
     password = input(">> ")
     if password.isalnum():
         break
