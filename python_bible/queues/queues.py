@@ -6,4 +6,4 @@ for x in range(5):
     q.put(x)
 
 for x in range(5):
-    print(q.get(x))
+    print(q.get())
