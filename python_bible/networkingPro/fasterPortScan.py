@@ -33,11 +33,12 @@ def worker():
         port = q.get()
         if portscan(port):
             print(f"Port {port} is open!")
-        # else:
-        #     print(f"Port {port} is closed!")
+    else:
+        print(f"Port {port} is closed!")
 
 
 # Using multithreading to speed up the process.
 for x in range(500):
     t = threading.Thread(target=worker)
     t.start()
+print("Port Scanning finished")
