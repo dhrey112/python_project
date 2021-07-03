@@ -1,0 +1,40 @@
+            REGEX IDENTIFIERS
+
+The Identifiers define what kind of character should be at a certain place.
+IDENTIFIER                      DESCRIPTION
+\d                              Some digit
+\D                      Everything BUT a digit
+\s                          White space
+\S                      Everything BUT a white space
+\w                      Some letter
+\W                      Everything BUT a letter
+.                   Every character except for new lines
+\b                      White spaces around a word
+\.                      A dot
+
+                MODIFIER
+modifiers extend the regular expressions and the identifiers. They
+might be seen as some kind of operator for regular expressions.
+
+            REGEX MODIFIERS
+ MODIFIER                DESCRIPTION
+   {x,y}               A number that has a length between x and y
+    +                           At least one
+    ?                       None or one
+    *                       Everything
+    $                       At the end of a string
+    ^                       At the beginning of a string
+    |                       Either Or
+                            Example: x | y = either x or y
+    []                         Value range
+    {x}                        x times
+    {x,y}                   x to y times
+
+
+ESCAPE CHARACTERS
+
+REGEX ESCAPE CHARATCERS
+CHARACTER                DESCRIPTION
+\n                         New Line
+\t                         Tab
+\s                        White Space
