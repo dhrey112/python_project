@@ -5,6 +5,7 @@ from .database import *
 from sqlalchemy.orm import Session
 from .models import Blog
 import blog
+from typing import List
 
 app = FastAPI()
 
@@ -50,13 +51,13 @@ def update(id, request: schemas.Blog, db: Session = Depends(get_db)):
     return "Blog updated successfully"
 
 
-@app.get('/blog/')
+@app.get('/blog/', response_model=List[schemas.show_blog])
 def all(db: Session = Depends(get_db)):
     blogs = db.query(Blog).all()
     return blogs
 
 
-@app.get('/blog/{id}', status.HTTP_200_OK)
+@app.get('/blog/{id}', status.HTTP_200_OK, response_model=schemas.show_blog)
 def show(id, response: Response, db: Session = Depends(get_db)):
     blog = db.query(models.Blog).filter(models.Blog.id == id).first()
     
@@ -65,3 +66,11 @@ def show(id, response: Response, db: Session = Depends(get_db)):
         # response.status_code = status.HTTP_404_NOT_FOUND
         # return{"details": f"Blog with the id {id} is not available"}
     return blog
+
+@app.post("/user")
+def create_user(request: schemas.User, db: Session = Depends(get_db)):
+    new_user = models.User(request)
+    db.add(new_user)
+    db.commit()
+    db.refresh()
+    return new_user
