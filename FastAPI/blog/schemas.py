@@ -15,4 +15,12 @@ class show_blog(BaseModel):
 
 class User(BaseModel):
     username: str
-    
+    email: str
+    password: str
+
+class show_user(BaseModel):
+    username: str
+    email: str
+
+    class Config():
+        orm_mode = True

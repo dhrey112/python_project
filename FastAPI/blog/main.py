@@ -6,6 +6,7 @@ from sqlalchemy.orm import Session
 from .models import Blog
 import blog
 from typing import List
+from .hashing import Hash
 
 app = FastAPI()
 
@@ -67,10 +68,10 @@ def show(id, response: Response, db: Session = Depends(get_db)):
         # return{"details": f"Blog with the id {id} is not available"}
     return blog
 
-@app.post("/user")
+@app.post("/user", response_model=schemas.show_user)
 def create_user(request: schemas.User, db: Session = Depends(get_db)):
-    new_user = models.User(request)
+    new_user = models.User(name=request.name, email=request.email, password=Hash.bcrypt(request.password))
     db.add(new_user)
     db.commit()
-    db.refresh()
+    db.refresh(new_user)
     return new_user
