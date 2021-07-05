@@ -1,4 +1,4 @@
-from sqlalchemy.sql.functions import user
+# from sqlalchemy.sql.functions import user
 from .database import Base
 from sqlalchemy import Column, Integer, String, ForeignKey
 from sqlalchemy.orm import relationship
